@@ -69,13 +69,15 @@ public class KreisFenster extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     public void zeichne(Graphics g) {
-        KleinsterKreis KK=new KleinsterKreis(); 
+        KleinsterKreis KK =new KleinsterKreis(); 
          Tuple[] points =new Tuple[KK.anzahlP];
           for (int i = 0; i < anzahlP; i++) {
             points[i] = new Tuple((int) (Math.random() * fensterGröße), (int) (Math.random() * fensterGröße)); //Problem
-            g.fillOval(points[i].x, points[i].y, 10, 10);   
+            g.fillOval(points[i].x-10, points[i].y-10, 10, 10);   
+            
+            g.drawOval(0,0, KleinsterKreis.GY, KleinsterKreis.GY);
           }
-        
+       
        
     }
 
@@ -113,7 +115,7 @@ public class KreisFenster extends javax.swing.JFrame {
             }
         });
         
-        
+         System.out.println(KleinsterKreis.GY);
     }
     
   
